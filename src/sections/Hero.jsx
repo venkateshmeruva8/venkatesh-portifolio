@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Download, Mail, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
+import { ArrowDown, Download, Eye, Mail, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
 import { Github, Linkedin } from '../components/icons/SocialIcons';
 import BlurText from '../components/reactbits/BlurText';
 import DecryptedText from '../components/reactbits/DecryptedText';
@@ -102,6 +102,18 @@ export default function Hero() {
               >
                 Explore My Work
                 <ArrowDown className="w-4 h-4" />
+              </a>
+
+              {/* View Resume Button */}
+              <a
+                href={profileData.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#F5EBDD] dark:bg-[#34312D] text-[#242321] dark:text-[#FFF9F0] text-sm font-semibold border border-[#E9E1D5] dark:border-[#49443E] hover:bg-[#E9E1D5] dark:hover:bg-[#3D3934] transition-all duration-200 hover:-translate-y-0.5"
+                title="View verified resume PDF in a new tab"
+              >
+                <Eye className="w-4 h-4 text-[#F47B35]" />
+                View Resume
               </a>
 
               {/* Download Resume Button */}
