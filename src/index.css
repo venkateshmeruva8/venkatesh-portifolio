@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-orange: #F47B35;
+  --color-brand-orange-hover: #E06822;
+  --color-brand-orange-light: #FFF0E6;
+  --color-brand-orange-muted: rgba(244, 123, 53, 0.12);
+  
+  --color-milky-white: #FFF9F0;
+  --color-cream: #F5EBDD;
+  --color-cream-subtle: #FAF4EB;
+  --color-cream-dark: #EFE3D3;
+  
+  --color-charcoal: #242321;
+  --color-charcoal-light: #383633;
+  --color-muted: #77716A;
+  --color-muted-light: #9B948C;
+  
+  --color-border-light: #E9E1D5;
+  --color-border-warm: #DFD5C6;
+
+  /* Dark mode specific tokens */
+  --color-dark-bg: #242321;
+  --color-dark-surface: #302E2B;
+  --color-dark-card: #34312D;
+  --color-dark-card-inner: #2A2724;
+  --color-dark-text: #FFF9F0;
+  --color-dark-muted: #C5BDB3;
+  --color-dark-border: #49443E;
+  --color-dark-border-subtle: #3D3934;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --theme-transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFF9F0;
+    color: #242321;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    background-color: #242321;
+    color: #FFF9F0;
+  }
+
+  body {
+    background-color: inherit;
+    color: inherit;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF9F0;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #242321;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #DFD5C6;
+    border-radius: 9999px;
+    border: 2px solid #FFF9F0;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #49443E;
+    border: 2px solid #242321;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F47B35;
+  }
+
+  /* Accessibility focus ring */
+  *:focus-visible {
+    outline: 2px solid #F47B35;
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
