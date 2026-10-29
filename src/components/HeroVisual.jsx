@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, Database, TrendingUp, Cpu, Sparkles, Layers, ArrowUpRight } from 'lucide-react';
+import SpotlightCard from './reactbits/SpotlightCard';
 
 export default function HeroVisual() {
   const [activeTab, setActiveTab] = useState('analytics');
 
   return (
     <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
-      {/* Decorative Warm Backing Grid Frame */}
-      <div className="relative rounded-3xl p-6 sm:p-7 bg-[#F5EBDD]/70 dark:bg-[#302E2B]/80 border border-[#E9E1D5] dark:border-[#49443E] shadow-xl backdrop-blur-xs transition-colors duration-300">
+      {/* Decorative Warm Backing Grid Frame with 3D Tilt */}
+      <SpotlightCard
+        maxTilt={4}
+        className="rounded-3xl p-6 sm:p-7 bg-[#F5EBDD]/80 dark:bg-[#302E2B]/90 border border-[#E9E1D5] dark:border-[#49443E] shadow-xl backdrop-blur-xs transition-colors duration-300"
+      >
         
         {/* Top Control Bar */}
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#E9E1D5] dark:border-[#49443E]">
@@ -226,7 +230,7 @@ FROM master_stock_table;`}</code>
           </span>
           <span className="font-mono text-[11px]">Bengaluru, India</span>
         </div>
-      </div>
+      </SpotlightCard>
     </div>
   );
 }

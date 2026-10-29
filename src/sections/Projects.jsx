@@ -73,10 +73,19 @@ export default function Projects() {
         </ScrollReveal>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 [perspective:1200px]">
           {filteredProjects.map((project, idx) => (
-            <ScrollReveal key={project.id} delay={0.08 * idx}>
-              <SpotlightCard className="h-full bg-[#F5EBDD] dark:bg-[#34312D] flex flex-col justify-between group overflow-hidden border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-all duration-300">
+            <ScrollReveal
+              key={project.id}
+              delay={0.08 * idx}
+              yOffset={28}
+              rotateX={8}
+              className="h-full"
+            >
+              <SpotlightCard
+                maxTilt={5}
+                className="h-full bg-[#F5EBDD] dark:bg-[#34312D] flex flex-col justify-between group overflow-hidden border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-all duration-300 shadow-xs hover:shadow-xl hover:shadow-[#F47B35]/10 dark:hover:shadow-black/50"
+              >
                 <div>
                   
                   {/* Card Visual Banner / Preview Header */}

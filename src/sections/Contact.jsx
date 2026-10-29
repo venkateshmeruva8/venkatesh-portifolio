@@ -94,39 +94,49 @@ export default function Contact() {
           </ScrollReveal>
 
           {/* Social Links Cards */}
-          <ScrollReveal delay={0.15}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href={profileData.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/40 dark:hover:border-[#F47B35]/60 transition-colors group"
+          <ScrollReveal delay={0.14} yOffset={24} rotateX={6}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 [perspective:1000px]">
+              <SpotlightCard
+                maxTilt={4}
+                className="bg-[#F5EBDD] dark:bg-[#34312D] border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-colors shadow-xs"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <Linkedin className="w-5 h-5 text-[#F47B35]" />
-                  <ExternalLink className="w-3.5 h-3.5 text-[#77716A] dark:text-[#C5BDB3] group-hover:text-[#F47B35] transition-colors" />
-                </div>
-                <p className="text-xs font-mono uppercase tracking-wider text-[#77716A] dark:text-[#C5BDB3]">Professional</p>
-                <p className="text-sm font-bold text-[#242321] dark:text-[#FFF9F0] group-hover:text-[#F47B35] transition-colors">
-                  LinkedIn Profile
-                </p>
-              </a>
+                <a
+                  href={profileData.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 block group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <Linkedin className="w-5 h-5 text-[#F47B35]" />
+                    <ExternalLink className="w-3.5 h-3.5 text-[#77716A] dark:text-[#C5BDB3] group-hover:text-[#F47B35] transition-colors" />
+                  </div>
+                  <p className="text-xs font-mono uppercase tracking-wider text-[#77716A] dark:text-[#C5BDB3]">Professional</p>
+                  <p className="text-sm font-bold text-[#242321] dark:text-[#FFF9F0] group-hover:text-[#F47B35] transition-colors">
+                    LinkedIn Profile
+                  </p>
+                </a>
+              </SpotlightCard>
 
-              <a
-                href={profileData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/40 dark:hover:border-[#F47B35]/60 transition-colors group"
+              <SpotlightCard
+                maxTilt={4}
+                className="bg-[#F5EBDD] dark:bg-[#34312D] border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-colors shadow-xs"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <Github className="w-5 h-5 text-[#F47B35]" />
-                  <ExternalLink className="w-3.5 h-3.5 text-[#77716A] dark:text-[#C5BDB3] group-hover:text-[#F47B35] transition-colors" />
-                </div>
-                <p className="text-xs font-mono uppercase tracking-wider text-[#77716A] dark:text-[#C5BDB3]">Repositories</p>
-                <p className="text-sm font-bold text-[#242321] dark:text-[#FFF9F0] group-hover:text-[#F47B35] transition-colors">
-                  GitHub Profile
-                </p>
-              </a>
+                <a
+                  href={profileData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 block group"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <Github className="w-5 h-5 text-[#F47B35]" />
+                    <ExternalLink className="w-3.5 h-3.5 text-[#77716A] dark:text-[#C5BDB3] group-hover:text-[#F47B35] transition-colors" />
+                  </div>
+                  <p className="text-xs font-mono uppercase tracking-wider text-[#77716A] dark:text-[#C5BDB3]">Repositories</p>
+                  <p className="text-sm font-bold text-[#242321] dark:text-[#FFF9F0] group-hover:text-[#F47B35] transition-colors">
+                    GitHub Profile
+                  </p>
+                </a>
+              </SpotlightCard>
             </div>
           </ScrollReveal>
 

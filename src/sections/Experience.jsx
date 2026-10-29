@@ -38,10 +38,19 @@ export default function Experience() {
         </ScrollReveal>
 
         {/* Experience Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 [perspective:1200px]">
           {experienceData.map((exp, idx) => (
-            <ScrollReveal key={exp.id} delay={0.1 * idx}>
-              <SpotlightCard className="h-full bg-[#F5EBDD] dark:bg-[#34312D] p-6 sm:p-8 flex flex-col justify-between border border-[#E9E1D5] dark:border-[#49443E] transition-all duration-300">
+            <ScrollReveal
+              key={exp.id}
+              delay={0.1 * idx}
+              yOffset={28}
+              rotateX={8}
+              className="h-full"
+            >
+              <SpotlightCard
+                maxTilt={4}
+                className="h-full bg-[#F5EBDD] dark:bg-[#34312D] p-6 sm:p-8 flex flex-col justify-between border border-[#E9E1D5] dark:border-[#49443E] transition-all duration-300 shadow-xs hover:shadow-xl hover:shadow-[#F47B35]/10 dark:hover:shadow-black/50"
+              >
                 <div>
                   
                   {/* Top Bar: Company & Duration */}

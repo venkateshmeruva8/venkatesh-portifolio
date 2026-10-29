@@ -38,10 +38,19 @@ export default function Certifications() {
         </ScrollReveal>
 
         {/* Certifications Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 [perspective:1200px]">
           {certificationsData.map((cert, idx) => (
-            <ScrollReveal key={cert.id} delay={0.08 * idx}>
-              <SpotlightCard className="h-full bg-[#F5EBDD] dark:bg-[#34312D] flex flex-col justify-between overflow-hidden border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-colors">
+            <ScrollReveal
+              key={cert.id}
+              delay={0.08 * idx}
+              yOffset={28}
+              rotateX={8}
+              className="h-full"
+            >
+              <SpotlightCard
+                maxTilt={5}
+                className="h-full bg-[#F5EBDD] dark:bg-[#34312D] flex flex-col justify-between overflow-hidden border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 dark:hover:border-[#F47B35]/60 transition-all duration-300 shadow-xs hover:shadow-xl hover:shadow-[#F47B35]/10 dark:hover:shadow-black/50"
+              >
                 <div>
                   
                   {/* Certificate Thumbnail Preview */}
@@ -111,8 +120,11 @@ export default function Certifications() {
         </div>
 
         {/* Academic Foundation Summary Banner */}
-        <ScrollReveal delay={0.2}>
-          <div className="rounded-3xl p-6 sm:p-8 bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <ScrollReveal delay={0.15} yOffset={24} rotateX={6}>
+          <SpotlightCard
+            maxTilt={3}
+            className="rounded-3xl p-6 sm:p-8 bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] grid grid-cols-1 md:grid-cols-3 gap-6 items-center shadow-xs hover:shadow-lg transition-shadow"
+          >
             <div className="md:col-span-2 space-y-2">
               <div className="flex items-center gap-2 text-xs font-mono text-[#F47B35] font-semibold uppercase">
                 <GraduationCap className="w-4 h-4" />
@@ -140,7 +152,7 @@ export default function Certifications() {
                 <p className="text-2xl font-serif font-bold text-[#242321] dark:text-[#FFF9F0]">98%</p>
               </div>
             </div>
-          </div>
+          </SpotlightCard>
         </ScrollReveal>
 
       </div>

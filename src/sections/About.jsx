@@ -93,22 +93,32 @@ export default function About() {
                 <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#77716A] dark:text-[#C5BDB3] mb-4">
                   What I Focus On
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 [perspective:1000px]">
                   {interests.map((item, idx) => (
-                    <div
+                    <ScrollReveal
                       key={idx}
-                      className="p-4 rounded-xl bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 transition-colors"
+                      delay={0.06 * idx}
+                      yOffset={18}
+                      rotateX={6}
+                      className="h-full"
                     >
-                      <div className="w-9 h-9 rounded-lg bg-[#FFF9F0] dark:bg-[#2A2724] border border-[#E9E1D5] dark:border-[#49443E] flex items-center justify-center mb-3">
-                        {item.icon}
-                      </div>
-                      <h4 className="text-sm font-semibold text-[#242321] dark:text-[#FFF9F0] mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-[#77716A] dark:text-[#C5BDB3] leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
+                      <SpotlightCard
+                        maxTilt={4}
+                        className="p-4 rounded-xl bg-[#F5EBDD] dark:bg-[#34312D] border border-[#E9E1D5] dark:border-[#49443E] hover:border-[#F47B35]/50 transition-colors h-full flex flex-col justify-between shadow-xs"
+                      >
+                        <div>
+                          <div className="w-9 h-9 rounded-lg bg-[#FFF9F0] dark:bg-[#2A2724] border border-[#E9E1D5] dark:border-[#49443E] flex items-center justify-center mb-3 text-[#F47B35]">
+                            {item.icon}
+                          </div>
+                          <h4 className="text-sm font-semibold text-[#242321] dark:text-[#FFF9F0] mb-1">
+                            {item.title}
+                          </h4>
+                          <p className="text-xs text-[#77716A] dark:text-[#C5BDB3] leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </SpotlightCard>
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>
